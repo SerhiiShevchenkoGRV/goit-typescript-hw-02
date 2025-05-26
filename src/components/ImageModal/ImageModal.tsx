@@ -1,10 +1,15 @@
 import clsx from "clsx";
 import s from "./ImageModal.module.css";
 import Modal from "react-modal";
+import { ImageModalProps } from "./ImageModal.types";
 
 Modal.setAppElement("#root");
 
-export default function ImageModal({ isOpen, onClose, selectedImg }) {
+export default function ImageModal({
+  isOpen,
+  onClose,
+  selectedImg,
+}: ImageModalProps) {
   const {
     alt_description: alt,
     created_at: date,
@@ -12,6 +17,7 @@ export default function ImageModal({ isOpen, onClose, selectedImg }) {
     urls,
     user: author,
   } = selectedImg;
+
   const { regular } = urls;
   const {
     instagram_username: insta,
